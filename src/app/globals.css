@@ -1,42 +1,258 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
+/* Reset básico */
 * {
   box-sizing: border-box;
-  padding: 0;
   margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-a {
-  color: inherit;
+/* Container principal */
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #d0dbf9; /* azul claro de fundo */
+  padding: 20px;
+  gap: 20px;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background: #f6f8ff;
+  border-radius: 16px;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 12px rgb(69 71 178 / 10%);
+}
+
+.sidebar img.profile-pic {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 12px;
+}
+
+.sidebar .user-name {
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.sidebar .user-role {
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 24px;
+}
+
+.sidebar nav {
+  width: 100%;
+}
+
+.sidebar nav a {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  margin-bottom: 8px;
+  border-radius: 10px;
+  color: #222;
   text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+.sidebar nav a.active,
+.sidebar nav a:hover {
+  background-color: #d6e0ff;
+  color: #3f51b5;
+}
+
+/* Ícones podem ser colocados via SVG inline ou img dentro do a */
+
+/* Área principal */
+.main-content {
+  flex: 1;
+  background: #f6f8ff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgb(69 71 178 / 10%);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(120px, auto);
+  gap: 20px;
+}
+
+/* Cards gerais */
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 6px 12px rgb(69 71 178 / 15%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Cartão do cartão de crédito */
+.card.credit-card {
+  background: linear-gradient(135deg, #c7d2fe, #a5b4fc);
+  color: #1e293b;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border-radius: 16px;
+  padding: 20px;
+  position: relative;
+}
+
+.card.credit-card .card-number {
+  letter-spacing: 3px;
+  margin-bottom: 24px;
+}
+
+.card.credit-card .card-holder {
+  font-size: 0.9rem;
+}
+
+.card.credit-card .card-expiry {
+  font-size: 0.8rem;
+  color: #555;
+}
+
+/* Wallet card */
+.card.wallet {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.card.wallet .amount {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.card.wallet .details {
+  display: flex;
+  justify-content: space-between;
+  color: #555;
+}
+
+.card.wallet .details .income {
+  color: #2ecc71;
+  font-weight: 600;
+}
+
+.card.wallet .details .expenses {
+  color: #e74c3c;
+  font-weight: 600;
+}
+
+/* Transactions */
+.card.transactions {
+  overflow-y: auto;
+}
+
+.card.transactions .transaction {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.card.transactions .transaction:last-child {
+  border-bottom: none;
+}
+
+/* Monthly earnings */
+.card.monthly-earnings {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 0.85rem;
+}
+
+.card.monthly-earnings canvas {
+  margin-top: 12px;
+}
+
+/* Earnings donut */
+.card.earnings {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+/* Payable accounts and side lists */
+.card.side-list {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.card.side-list h3 {
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.card.side-list ul {
+  list-style: none;
+}
+
+.card.side-list ul li {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.card.side-list ul li:last-child {
+  border-bottom: none;
+}
+
+/* Barra de progresso */
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: #ddd;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background-color: #3f51b5;
+  width: 87.5%; /* exemplo 14/16 */
+}
+
+/* Buscador */
+.search-bar {
+  grid-column: 1 / -1;
+  margin-bottom: 20px;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 10px 16px;
+  border-radius: 14px;
+  border: none;
+  background-color: #e9eefc;
+  font-size: 1rem;
+  outline: none;
+}
+
+/* Notificações ícones - só exemplo */
+.notification-icons {
+  grid-column: 3 / 4;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: #555;
 }
