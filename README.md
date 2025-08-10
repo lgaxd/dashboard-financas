@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Finanças Pessoais - Dashboard de Controle Financeiro
 
-## Getting Started
+## 📌 Visão Geral
 
-First, run the development server:
+Este projeto é um dashboard de controle financeiro pessoal que permite:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+-Registrar renda mensal e reservas financeiras
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+-Gerenciar gastos fixos e variáveis
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+-Visualizar resumo financeiro por mês/ano
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+-Acompanhar limites de gastos e porcentagens do orçamento
 
-## Learn More
+## ✨ Funcionalidades Principais
 
-To learn more about Next.js, take a look at the following resources:
+-✅ Controle por período
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+-Seletor de ano (2023-2025) e mês
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+-Dados isolados por mês/ano
 
-## Deploy on Vercel
+-💰 Gestão financeira completa
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+-Renda mensal configurável por período
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+-Reserva financeira personalizada
+
+-Gastos fixos específicos para cada mês
+
+-Gastos variáveis com data específica
+
+## 📊 Visualização intuitiva
+
+-Timeline organizada por dia/mês
+
+-Gráfico de porcentagem do orçamento
+
+-Cálculo automático de limites
