@@ -45,8 +45,9 @@ export default function GastoModal({
             <input
               type="date"
               value={data}
-              onChange={e => setData(e.target.value)}
-              style={{ width: '100%', padding: 8, fontSize: 16, boxSizing: 'border-box' }}
+              onChange={(e) => setData(e.target.value)}
+              required // Adiciona validação HTML
+              style={{ width: '100%', padding: 8, fontSize: 16 }}
             />
           </div>
         )}

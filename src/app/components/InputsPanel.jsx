@@ -28,9 +28,9 @@ export default function InputsPanel({
           onChange={e => setAnoSelecionado(parseInt(e.target.value))}
           style={{ width: '100%', padding: 8, fontSize: 16 }}
         >
-          <option value={2023}>2023</option>
-          <option value={2024}>2024</option>
           <option value={2025}>2025</option>
+          <option value={2026}>2026</option>
+          <option value={2027}>2027</option>
         </select>
       </div>
 
@@ -65,7 +65,7 @@ export default function InputsPanel({
         >
           {Array.from({ length: 12 }).map((_, i) => (
             <option key={i} value={i + 1}>
-              {format(new Date(2023, i, 1), 'MMMM', { locale: ptBR })}
+              {format(new Date(2025, i, 1), 'MMMM', { locale: ptBR })}
             </option>
           ))}
         </select>
