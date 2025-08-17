@@ -1,39 +1,21 @@
-# Finanças Pessoais - Dashboard de Controle Financeiro
+# 📊 Dashboard de Gestão Financeira Pessoal
 
-## 📌 Visão Geral
+## 🌟 Visão Geral
+Sistema completo para controle financeiro pessoal com visualização intuitiva de gastos e receitas.
 
-Este projeto é um dashboard de controle financeiro pessoal que permite:
+## ✨ Funcionalidades
 
--Registrar renda mensal e reservas financeiras
+### 📌 Controle Financeiro
+- ✔️ Registro de receitas e despesas  
+- ✔️ Classificação de gastos (fixos/variáveis)  
+- ✔️ Controle mensal por categorias  
 
--Gerenciar gastos fixos e variáveis
+### 📊 Visualização de Dados
+- 📈 Gráficos de distribuição orçamentária  
+- 📅 Linha do tempo de gastos diários  
+- 🔢 Cálculos automáticos de limites  
 
--Visualizar resumo financeiro por mês/ano
-
--Acompanhar limites de gastos e porcentagens do orçamento
-
-## ✨ Funcionalidades Principais
-
--✅ Controle por período
-
--Seletor de ano (2023-2025) e mês
-
--Dados isolados por mês/ano
-
--💰 Gestão financeira completa
-
--Renda mensal configurável por período
-
--Reserva financeira personalizada
-
--Gastos fixos específicos para cada mês
-
--Gastos variáveis com data específica
-
-## 📊 Visualização intuitiva
-
--Timeline organizada por dia/mês
-
--Gráfico de porcentagem do orçamento
-
--Cálculo automático de limites
+### 🔒 Segurança
+- 🔐 Autenticação por e-mail/senha  
+- 🛡️ Dados isolados por usuário  
+- 🔄 Sessão persistente  
