@@ -3,10 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "concurrently \"npm run pocketbase\" \"next dev\"",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "pocketbase": "pocketbase.exe serve"
   },
   "dependencies": {
     "date-fns": "^4.1.0",
@@ -14,5 +15,8 @@
     "pocketbase": "^0.26.2",
     "react": "19.1.0",
     "react-dom": "19.1.0"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.0"
   }
 }
