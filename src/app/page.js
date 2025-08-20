@@ -194,6 +194,21 @@ export default function Dashboard() {
     }
   };
 
+  // Deletar gasto
+  const deletarGasto = async () => {
+    if (!gastoEditando) return;
+
+    try {
+      await pb.collection('gastos').delete(gastoEditando.id);
+      await carregarGastos();
+      setModalAberto(false);
+      setGastoEditando(null);
+    } catch (error) {
+      console.error("Erro ao deletar gasto:", error);
+      alert("Erro ao deletar gasto. Verifique o console para detalhes.");
+    }
+  };
+
   // Filtrar gastos variáveis pelo mês atual
   const gastosVariaveisMes = useMemo(() => {
     return gastosVariaveis.filter(g => {
@@ -333,6 +348,7 @@ export default function Dashboard() {
         data={data}
         setData={setData}
         salvarGasto={salvarGasto}
+        deletarGasto={deletarGasto}
       />
     </div>
   );

@@ -12,6 +12,7 @@ export default function GastoModal({
   data,
   setData,
   salvarGasto,
+  deletarGasto
 }) {
   if (!aberto) return null;
 
@@ -55,6 +56,7 @@ export default function GastoModal({
         <div style={{ textAlign: 'right' }}>
           <button onClick={salvarGasto} style={buttonStyle}>Salvar</button>
           <button onClick={() => onClose(false)} style={{ ...buttonStyle, marginLeft: 8, backgroundColor: '#ccc', color: '#000' }}>Cancelar</button>
+          <button onClick={deletarGasto} style={{ ...buttonStyle, marginLeft: 8, backgroundColor: '#ff0000ff', color: '#000' }}>Deletar</button>
         </div>
       </div>
     </div>

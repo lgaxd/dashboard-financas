@@ -32,13 +32,15 @@ export default function Timeline({ gastosFixos, gastosVariaveisMes, mesSeleciona
           ))}
         </details>
       )}
-
       {Array.from(new Set(gastosVariaveisMes.map(g => g.data)))
         .sort()
         .map(dia => (
           <details key={dia} style={{ marginBottom: 16 }}>
             <summary style={{ cursor: 'pointer', fontWeight: 'bold', marginBottom: 8 }}>
-              {format(new Date(dia), 'dd/MM/yyyy', { locale: ptBR })} - Total:{' '}
+              {(new Date(dia).toLocaleDateString('pt-BR', {
+                timeZone: 'UTC'
+              }))
+              } - Total:{' '}
               {gastosVariaveisMes
                 .filter(g => g.data === dia)
                 .reduce((acc, g) => acc + g.valor, 0)
